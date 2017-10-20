@@ -1,0 +1,38 @@
+//
+// Generate `:hover` and `:focus` styles in one go.
+//
+// @link    https://github.com/inuitcss/inuitcss/blob/master/tools/_tools.mixins.scss
+// @content Wrapped in `:focus` and `:hover` pseudo-classes.
+// @output  Wraps the given content in `:focus` and `:hover` pseudo-classes.
+//
+@mixin u-hocus {
+  &:focus,
+  &:hover {
+    @content;
+  }
+}
+
+//
+// Generate `:active` and `:focus` styles in one go.
+//
+// @see     {Mixin} u-hocus
+// @content Wrapped in `:focus` and `:active` pseudo-classes.
+// @output  Wraps the given content in `:focus` and `:hover` pseudo-classes.
+//
+@mixin u-actus {
+  &:focus,
+  &:active {
+    @content;
+  }
+}
+
+//
+// Injects generic rules for disabling UL/OL/LI styles.
+//
+// @output `list-style`, `margin`, `padding`
+//
+@mixin u-list-reset {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
