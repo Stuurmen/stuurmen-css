@@ -1,0 +1,12 @@
+{
+  "name": "stuurmen-frontend-boilerplate",
+  "version": "0.1",
+  "description": "Front-end functions",
+  "main": "main.scss",
+  "repository": {
+    "url": "https://github.com/deJong/stuurmen-frontend-boilerplate",
+    "type": "git"
+  },
+  "author": "Stijn de Jong",
+  "license": "MIT"
+}
