@@ -1,12 +1,23 @@
 {
   "name": "stuurmen-frontend-boilerplate",
-  "version": "0.1",
+  "version": "1.0.0",
   "description": "Front-end functions",
   "main": "main.scss",
   "repository": {
     "url": "https://github.com/deJong/stuurmen-frontend-boilerplate",
     "type": "git"
   },
+  "scripts": {
+    "test": "npm run lint && npm run scss",
+    "lint": "./node_modules/.bin/stylelint \"**/*.scss\" --syntax scss",
+    "scss": "node-sass main.scss"
+  },
   "author": "Stijn de Jong",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "glob": "^7.1.1",
+    "stylelint": "^7.10.1",
+    "stylelint-scss": "^1.4.3",
+    "node-sass": "^4.5.2"
+  }
 }

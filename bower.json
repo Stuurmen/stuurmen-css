@@ -1,12 +1,13 @@
 {
   "name": "stuurmen-frontend-boilerplate",
+  "version": "0.1",
+  "homepage": "https://stuur.men",
   "description": "Front-end functions",
   "main": "main.scss",
   "authors": [
     "Stijn de Jong"
   ],
   "license": "MIT",
-  "homepage": "https://stuur.men",
   "private": true,
   "ignore": [
     "**/.*",
@@ -14,5 +15,9 @@
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "normalize-scss": "^3.0.3",
+    "sass-mq": "^3.3.2"
+  }
 }

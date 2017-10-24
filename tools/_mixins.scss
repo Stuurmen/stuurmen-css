@@ -1,4 +1,30 @@
 //
+// Vertically-center the direct descendants of the current element.
+//
+// Centering is achieved by displaying children as inline-blocks. Any whitespace
+// between elements is nullified by redefining the font size of the container
+// and its children.
+//
+// @output `font-size`, `display`, `vertical-align`
+//
+@mixin o-vertical-center {
+  font-size: 0;
+
+  &::before {
+    display: inline-block;
+    height: 100%;
+    content: "";
+    vertical-align: middle;
+  }
+
+  > * {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 1rem;
+  }
+}
+
+//
 // Generate `:hover` and `:focus` styles in one go.
 //
 // @link    https://github.com/inuitcss/inuitcss/blob/master/tools/_tools.mixins.scss
@@ -35,4 +61,30 @@
   margin: 0;
   padding: 0;
   list-style: none;
+}
+
+//
+// Generate a font-size and baseline-compatible line-height.
+//
+// @link   https://github.com/inuitcss/inuitcss/c14029c/tools/_tools.font-size.scss
+// @param  {Number}  $font-size           - The size of the font.
+// @param  {Number}  $line-height [auto]  - The line box height.
+// @param  {Boolean} $important   [false] - Whether the font-size is important.
+// @output `font-size`, `line-height`
+//
+@mixin font-size($font-size, $line-height: auto, $important: false) {
+  $important: important($important);
+  font-size: rem($font-size) $important;
+
+  @if ($line-height == "auto") {
+    line-height: ceil($font-size / $line-height) * ($line-height / $font-size) $important;
+  }
+  @else {
+    @if (type-of($line-height) == number or $line-height == "inherit" or $line-height == "normal") {
+      line-height: $line-height $important;
+    }
+    @elseif ($line-height != "none" and $line-height != false) {
+      @error "D’oh! `#{$line-height}` is not a valid value for `$line-height`."
+    }
+  }
 }

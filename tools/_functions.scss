@@ -1,4 +1,31 @@
 //
+// Converts the given pixel value to its REM quivalent.
+//
+// @param  {Number} $size                     - The pixel value to convert.
+// @param  {Number} $base [$font-size] - The assumed base font size.
+// @return {Number} Scalable pixel value in REMs.
+//
+@function rem($size, $base: $font-size) {
+  @if (type-of($size) == number) {
+    @if (unit($size) != "px") {
+      @error "`#{$size}` needs to be a pixel value.";
+    }
+  } @else {
+    @error "`#{$size}` needs to be a number.";
+  }
+
+  @if (type-of($base) == number) {
+    @if (unit($base) != "px") {
+      @error "`#{$base}` needs to be a pixel value.";
+    }
+  } @else {
+    @error "`#{$base}` needs to be a number.";
+  }
+
+  @return ($size / $base) * 1rem;
+}
+
+//
 // Resolve whether a rule is important or not.
 //
 // @param  {Boolean}     $flag - Whether a rule is important (TRUE) or not (FALSE).

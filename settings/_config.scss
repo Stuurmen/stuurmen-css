@@ -1,0 +1,73 @@
+// Typefaces
+// =============================================================================
+$font-sans-serif: sans-serif;
+
+// Typography
+// =============================================================================
+// Base
+$font-size:   16px;
+$line-height: 24px / $font-size;
+$font-family: $font-sans-serif;
+$color:       #222222;
+
+// Headings
+$font-size-h1:  36px  !default;
+$font-size-h2:  28px  !default;
+$font-size-h3:  24px  !default;
+$font-size-h4:  20px  !default;
+$font-size-h5:  18px  !default;
+$font-size-h6:  16px  !default;
+
+// Weights
+$light:  300;
+$normal: 400;
+$medium: 500;
+$bold:   700;
+
+// Layout
+// =============================================================================
+// Name your breakpoints in a way that creates a ubiquitous language
+// across team members. It will improve communication between
+// stakeholders, designers, developers, and testers.
+$mq-breakpoints: (
+        mobile:  320px,
+        tablet:  740px,
+        desktop: 980px,
+        wide:    1300px,
+
+  // Tweakpoints
+        desktopAd: 810px,
+        mobileLandscape: 480px
+);
+
+$mq-show-breakpoints: (mobile, mobileLandscape, tablet, desktop, wide);
+
+@import '../bower_components/sass-mq/mq';
+
+// UI
+// =============================================================================
+// Standardise some UI treatments.
+$global-radius: 3px !default;
+$global-transition: all 300ms ease-in-out !default;
+
+$important: false;
+
+// Spacing values are determined based on your project’s global line height (i.e
+// your baseline grid). It is not recommended that you modify these following
+// variables (it can break your vertical rhythm), but if you need to, you can.
+$global-spacing-unit: round($line-height) !default;
+
+// How many times larger/smaller than the default should our spacing unit
+// variants be?
+
+$global-spacing-unit-factor-tiny:   0.25 !default;
+$global-spacing-unit-factor-small:  0.5  !default;
+$global-spacing-unit-factor-large:  2    !default;
+$global-spacing-unit-factor-huge:   4    !default;
+
+// Private/framework-only reassignment. Do not alter anything below.
+
+$global-spacing-unit-tiny:  round($global-spacing-unit * $global-spacing-unit-factor-tiny);
+$global-spacing-unit-small: round($global-spacing-unit * $global-spacing-unit-factor-small);
+$global-spacing-unit-large: round($global-spacing-unit * $global-spacing-unit-factor-large);
+$global-spacing-unit-huge:  round($global-spacing-unit * $global-spacing-unit-factor-huge);

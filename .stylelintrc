@@ -1,0 +1,12 @@
+{
+  "plugins": [
+    "stylelint-scss"
+  ],
+  "ignoreFiles": [
+    "./bower_compontens/normalize-scss/_normalize.scss",
+  ],
+  "rules": {
+    "scss/dollar-variable-colon-space-before": "never",
+    "scss/selector-no-redundant-nesting-selector": true,
+  }
+}
