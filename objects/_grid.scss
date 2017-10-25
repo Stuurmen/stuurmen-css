@@ -1,0 +1,178 @@
+// ==========================================================================||
+//  By default, items in will be left aligned, wrappable and not growable
+// ==========================================================================||
+
+.o-layout {
+  display: flex;
+  overflow: hidden;
+}
+
+.o-layout--auto,
+.o-layout--grids {
+  flex-wrap: wrap;
+  margin-left: -$global-spacing-unit;
+
+  > .o-layout__item {
+    padding-left: $global-spacing-unit;
+  }
+}
+
+.o-layout--auto {
+  > .o-layout__item {
+    flex: 1;
+  }
+}
+
+.o-layout--grids {
+  align-items: flex-start;
+  flex-flow: row wrap;
+
+  > .o-layout__item {
+    flex: 0 0 100%;
+    width: 100%;
+  }
+}
+
+// ==========================================================================||
+//  Ensures that height of all .o-layout__item to match one another
+// ==========================================================================||
+.o-layout--grids-stretched {
+  align-items: stretch;
+}
+
+// ==========================================================================||
+//  Modifiers for alignment of items
+//  --centered: center all items vertically and horizontally
+//  --centered-v: center all items vertically only
+//  --centered-h: center all items horizontally only
+// ==========================================================================||
+
+.o-layout--centered {
+  align-items: center;
+  justify-content: center;
+}
+
+.o-layout--centered-v {
+  align-items: center;
+}
+
+.o-layout--centered-h {
+  justify-content: center;
+}
+
+// ==========================================================================||
+//  Modifiers for layout (direction) of items
+//  --reversed: flex-direction = row-reverse
+//  --column: flex-direction = column
+//  --column-reversed: flex-direction = column-reverse ==========================================================================||
+
+.o-layout--reversed {
+  flex-direction: row-reverse;
+}
+
+// ==========================================================================||
+//  Note: flex-direction column/column-reverse will take full width of parent
+//  container and is not affected by flex-basis to set width
+//
+//  Reference: https://codepen.io/townivan/post/flexbox-layout-direction-column
+// ==========================================================================||
+
+.o-layout--column {
+  flex-direction: column;
+}
+
+.o-layout--column-reversed {
+  flex-direction: column-reverse;
+}
+
+// ==========================================================================||
+//  Modifiers for wrapping of items
+//  --wrap: flex-wrap = wrap == using .o-layout--grids
+//  --wrap-reverse: flex-wrap = wrap-reverse
+// ==========================================================================||
+
+.o-layout--nowrap {
+  flex-wrap: nowrap;
+}
+
+.o-layout--wrap {
+  flex-wrap: wrap;
+}
+
+.o-layout--wrap-reverse {
+  flex-wrap: wrap-reverse;
+}
+
+// ==========================================================================||
+//  Modifiers for adding spacing between elements
+//  --space-between: adds spacing between items only
+//  --space-around: adds spacing on both side of all items
+// ==========================================================================||
+
+.o-layout--space-between {
+  justify-content: space-between;
+}
+
+.o-layout--space-around {
+  justify-content: space-around;
+}
+
+// ==========================================================================||
+//  Modifiers for locking elements in respect to container
+//  --lock-left: lock elements to left side
+//  --lock-right: lock elements to right side
+//  --lock-top: lock elements to top side
+//  --lock-bottom: lock elements to bottom side
+//  --lock-top-left: lock elements to top left side
+//  --lock-top-right: lock elements to top right side
+//  --lock-bottom-left: lock elements to bottom left side
+//  --lock-bottom-right: lock elements to bottom right side
+// ==========================================================================||
+
+.o-layout--lock-left {
+  align-content: center;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.o-layout--lock-right {
+  align-content: center;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.o-layout--lock-top {
+  align-content: flex-start;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.o-layout--lock-bottom {
+  align-content: flex-end;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.o-layout--lock-top-left {
+  align-content: flex-start;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.o-layout--lock-top-right {
+  align-content: flex-start;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+
+.o-layout--lock-bottom-left {
+  align-content: flex-end;
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+
+.o-layout--lock-bottom-right {
+  align-content: flex-end;
+  align-items: flex-end;
+  justify-content: flex-end;
+}

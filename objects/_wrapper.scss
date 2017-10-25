@@ -1,0 +1,49 @@
+/* ==========================================================================
+   #WRAPPER
+   ========================================================================== */
+
+/**
+ * Page-level constraining and wrapping elements.
+ */
+
+/* stylelint-disable */
+@if (type-of($wrapper-width) != number) {
+  @error "`#{$wrapper-width}` needs to be a number."
+}
+/* stylelint-enable */
+
+.o-wrapper {
+  @include clearfix();
+  padding-right: $global-spacing-unit;
+  padding-left:  $global-spacing-unit;
+  margin-right: auto;
+  margin-left:  auto;
+  max-width: $wrapper-width;
+}
+
+
+
+
+
+/* Size variants.
+   ========================================================================== */
+
+.o-wrapper--small{
+  padding-right: $global-spacing-unit-small;
+  padding-left:  $global-spacing-unit-small;
+}
+
+.o-wrapper--medium{
+  padding-right: $global-spacing-unit-medium;
+  padding-left:  $global-spacing-unit-medium;
+}
+
+.o-wrapper--large {
+  padding-right: $global-spacing-unit-large;
+  padding-left:  $global-spacing-unit-large;
+}
+
+.o-wrapper--xlarge {
+  padding-right: $global-spacing-unit-xlarge;
+  padding-left:  $global-spacing-unit-xlarge;
+}

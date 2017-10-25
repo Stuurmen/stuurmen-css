@@ -4,23 +4,23 @@
 
 // Settings
 // ==========================================================================
-@import "settings/colors";
-@import "settings/config";
+//@import "settings/colors";
+//@import "settings/config";
 
 // Tools
 // ==========================================================================
 @import "tools/fonts";
 @import "tools/functions";
 @import "tools/hidden";
-@import "tools/layout";
+@import "tools/grid";
 @import "tools/mixins";
-@import "tools/widths";
 
 // Generic
 // ==========================================================================
 @import "generic/reset";
 
 // Elements
+// Unclassed HTML elements (e.g. a {}, blockquote {}, address {}).
 // ==========================================================================
 @import "elements/form";
 @import "elements/headings";
@@ -29,8 +29,9 @@
 @import "elements/page";
 
 // Objects
+// Objects, abstractions, and design patterns (e.g. .o-layout {}). non-cosmetic styles that handle the skeletal aspect of a lot of UI components, without ever actually looking like designed ‘things’.
 // ==========================================================================
-@import "objects/layout";
+@import "objects/flex";
 @import "objects/list";
 @import "objects/media";
 @import "objects/nav";
@@ -38,20 +39,21 @@
 @import "objects/tables";
 
 // Components
+// Discrete, complete chunks of UI (e.g. .c-carousel {}). This is the one layer that inuitcss doesn’t provide code for, as this is completely your terrain.
 // ==========================================================================
-@import "components/button";
+//@import "components/button";
 
 // Templates
 // ==========================================================================
-@import "templates/base";
-@import "templates/page";
-@import "templates/post";
-@import "templates/preloader";
-@import "templates/search";
+//@import "templates/base";
+//@import "templates/page";
+//@import "templates/post";
+//@import "templates/preloader";
+//@import "templates/search";
 
 // Utilities
 // ==========================================================================
-@import "utilities/editor-style";
+//@import "utilities/editor-style";
 @import "utilities/float";
 @import "utilities/headings";
 @import "utilities/hidden";
@@ -61,4 +63,4 @@
 
 // Vendor
 // ==========================================================================
-@import 'bower_components/normalize-scss/normalize.css';
+

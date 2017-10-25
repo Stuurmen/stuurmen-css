@@ -27,11 +27,11 @@ html {
   color: $selection-text-color;
   text-shadow: none;
 }
-//
-//a {
-//  @include u-hocus {
-//    color: $link-hover-color;
-//  }
-//
-//  color: $link-color;
-//}
+
+a {
+  @include u-hocus {
+    color: $link-hover-color;
+  }
+
+  color: $link-color;
+}

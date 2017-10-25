@@ -1,0 +1,173 @@
+// ==========================================================================||
+//  Various mixins to make development easier should there be different
+//  behaviour on different breakpoints.
+// ==========================================================================||
+
+// ==========================================================================||
+//  Mixin: inuit-flex-direction($direction)
+//  Defines flex-direction property for flex container
+// ==========================================================================||
+//  Parameter(s)
+//  $direction [string] (default: "row") - accepted values:
+//  - row
+//  - row-reverse
+//  - column
+//  - column-reverse
+// ==========================================================================||
+
+$flex-directions: (
+        "row": "row",
+        "row-reverse": "row-reverse",
+        "column": "column",
+        "column-reverse": "column-reverse",
+);
+
+@mixin flex-direction($direction: "row") {
+  @if map_get($flex-directions, $direction) {
+    flex-direction: $direction;
+  }
+  @else {
+    @error "Invalid value entered for flex-direction mixin";
+  }
+}
+
+// ==========================================================================||
+//  Mixin: inuit-flex-position($position)
+//  Defines position of child elements within container
+// ==========================================================================||
+//  Parameter(s)
+//  $position [string] (default: "lock-top-left") - accepted values:
+//  - centered
+//  - centered-v
+//  - centered-h
+//  - lock-left
+//  - lock-right
+//  - lock-top
+//  - lock-bottom
+//  - lock-top-left
+//  - lock-top-right
+//  - lock-bottom-left
+//  - lock-bottom-right
+// ==========================================================================||
+
+$flex-positions: (
+        "centered": "centered",
+        "centered-v": "centered-v",
+        "centered-h": "centered-h",
+        "lock-left": "lock-left",
+        "lock-right": "lock-right",
+        "lock-top": "lock-top",
+        "lock-bottom": "lock-bottom",
+        "lock-top-left": "lock-top-left",
+        "lock-top-right": "lock-top-right",
+        "lock-bottom-left": "lock-bottom-left",
+        "lock-bottom-right": "lock-bottom-right",
+);
+
+@mixin flex-position($position: "lock-top-left") {
+  @if map_get($flex-positions, $position) {
+    @if $position == "centered" {
+      align-items: center;
+      justify-content: center;
+    }
+    @else if $position == "centered-v" {
+      align-items: center;
+    }
+    @else if $position == "centered-h" {
+      justify-content: center;
+    }
+    @else if $position == "lock-left" {
+      align-content: center;
+      align-items: center;
+      justify-content: flex-start;
+    }
+    @else if $position == "lock-right" {
+      align-content: center;
+      align-items: center;
+      justify-content: flex-end;
+    }
+    @else if $position == "lock-top" {
+      align-content: flex-start;
+      align-items: flex-start;
+      justify-content: center;
+    }
+    @else if $position == "lock-bottom" {
+      align-content: flex-end;
+      align-items: flex-end;
+      justify-content: center;
+    }
+    @else if $position == "lock-top-left" {
+      align-content: flex-start;
+      align-items: flex-start;
+      justify-content: flex-start;
+    }
+    @else if $position == "lock-top-right" {
+      align-content: flex-start;
+      align-items: flex-start;
+      justify-content: flex-end;
+    }
+    @else if $position == "lock-bottom-left" {
+      align-content: flex-end;
+      align-items: flex-end;
+      justify-content: flex-start;
+    }
+    @else if $position == "lock-bottom-right" {
+      align-content: flex-end;
+      align-items: flex-end;
+      justify-content: flex-end;
+    }
+  }
+  @else {
+    @error "Invalid value entered for flex-position mixin";
+  }
+}
+
+// ==========================================================================||
+//  Mixin: flex-wrap($wrap)
+//  Defines flex-wrap property for flex container
+// ==========================================================================||
+//  Parameter(s)
+//  $wrap [string] (default: "wrap") - accepted values:
+//  - wrap
+//  - wrap-reverse
+//  - nowrap
+// ==========================================================================||
+
+$flex-wraps: (
+        "wrap": "wrap",
+        "wrap-reverse": "wrap-reverse",
+        "nowrap": "nowrap",
+);
+
+@mixin flex-wrap($wrap: "wrap") {
+  @if map_get($flex-wraps, $wrap) {
+    flex-wrap: $wrap;
+  }
+  @else {
+    @error "Invalid value entered for flex-wrap mixin";
+  }
+}
+
+// ==========================================================================||
+//  Mixin: flex-spacing($spacing)
+//  Defines justify-content property for flex container
+// ==========================================================================||
+//  Parameter(s)
+//  $spacing [string] (default: "") - accepted values:
+//  - space-between
+//  - space-around
+// ==========================================================================||
+
+$flex-spacings: (
+        "space-between": "space-between",
+        "space-around": "space-around",
+);
+
+@mixin flex-spacing($spacing: "") {
+  @if map_get($flex-spacings, $spacing) {
+    justify-content: $spacing;
+  }
+  @else {
+    @error "Invalid value entered for flex-spacing mixin";
+  }
+}
