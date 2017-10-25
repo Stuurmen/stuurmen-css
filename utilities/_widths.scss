@@ -19,17 +19,17 @@
 @mixin flexwidths($fractions, $breakpoint:null) {
   @each $denominator in $fractions {
     @for $numerator from 1 through $denominator {
-      .u-#{$numerator}#{$widths-delimiter}#{$denominator}#{$breakpoint} {
+      .u-#{$numerator}#{$breakpoint} {
         flex: 0 0 ($numerator / $denominator) * 100% !important;
         max-width: ($numerator / $denominator) * 100% !important;
       }
 
       @if ($offsets == true) {
-        .o-layout:not(.o-layout--reversed) .o-layout__item.u-offset-#{$numerator}#{$widths-delimiter}#{$denominator}#{$breakpoint} {
+        .o-layout:not(.o-layout--reversed) .o-layout__item.u-offset-#{$numerator}#{$breakpoint} {
           margin-left: ($numerator / $denominator) * 100% !important;
         }
 
-        .o-layout.o-layout--reversed .o-layout__item.u-offset-#{$numerator}#{$widths-delimiter}#{$denominator}#{$breakpoint} {
+        .o-layout.o-layout--reversed .o-layout__item.u-offset-#{$numerator}#{$breakpoint} {
           margin-right: ($numerator / $denominator) * 100% !important;
         }
       }
