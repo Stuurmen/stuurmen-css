@@ -1,28 +1,74 @@
+// ==========================================================================
+// Settings / Config
+// ==========================================================================
+
+// Path is relative to the stylesheets directory.
+$assets-path: "../"  !default;
+
 // Typefaces
 // =============================================================================
-$font-sans-serif: sans-serif;
+$font-headings:  'bebasneue';
+$font-p: 'sourcesanspro';
 
 // Typography
 // =============================================================================
 // Base
-$font-size:   16px;
-$line-height: 24px / $font-size;
-$font-family: $font-sans-serif;
+$global-font-size:   16px;
+$global-line-height: 24px / $global-font-size;
+$font-family: $font-p;
+
+$p-font-sizes: (
+        null  : $global-font-size,
+        medium: 17px,
+        large : 19px,
+        xlarge: 21px
+);
+
+// Weights
+$light:  300;
+$normal: 400;
+$medium: 600;
+$bold:   700;
 
 // Headings
-$font-size-h1:  36px  !default;
+$font-size-h1:  36px !default;
 $font-size-h2:  28px  !default;
 $font-size-h3:  24px  !default;
 $font-size-h4:  20px  !default;
 $font-size-h5:  18px  !default;
 $font-size-h6:  16px  !default;
-$line-height-h: $line-height;
+$line-height-h: $global-line-height;
+$h-increase: 1.25;
 
-// Weights
-$light:  300;
-$normal: 400;
-$medium: 500;
-$bold:   700;
+$h1-font-sizes: (
+        null  : $font-size-h1,
+        large: 70px
+);
+
+$h2-font-sizes: (
+        null  : $font-size-h2,
+        large : $font-size-h2 * $h-increase
+);
+
+$h3-font-sizes: (
+        null  : $font-size-h3,
+        large : $font-size-h3 * $h-increase
+);
+
+$h4-font-sizes: (
+        null  : $font-size-h4,
+        large : $font-size-h4 * $h-increase
+);
+
+$h5-font-sizes: (
+        null  : $font-size-h5,
+        large : $font-size-h5 * $h-increase
+);
+
+$h6-font-sizes: (
+        null  : $font-size-h6,
+        large : $font-size-h6 * $h-increase
+);
 
 // Layout
 // =============================================================================
@@ -48,7 +94,7 @@ $mq-show-breakpoints: (small, medium, large, xlarge);
 // UI
 // =============================================================================
 // Standardise some UI treatments.
-$global-radius: 3px !default;
+$global-radius: 0px !default;
 $global-transition: all 300ms ease-in-out !default;
 
 $important: false;
@@ -56,19 +102,19 @@ $important: false;
 // Spacing values are determined based on your project’s global line height (i.e
 // your baseline grid). It is not recommended that you modify these following
 // variables (it can break your vertical rhythm), but if you need to, you can.
-$global-spacing-unit: round($line-height) !default;
+$global-spacing-unit: round($global-line-height) !default;
 
 // How many times larger/smaller than the default should our spacing unit
 // variants be?
 
-$global-spacing-unit-factor-tiny:   0.25 !default;
-$global-spacing-unit-factor-small:  0.5  !default;
+$global-spacing-unit-factor-small:   0.25 !default;
+$global-spacing-unit-factor-medium:  0.5  !default;
 $global-spacing-unit-factor-large:  2    !default;
-$global-spacing-unit-factor-huge:   4    !default;
+$global-spacing-unit-factor-xlarge:   4    !default;
 
 // Private/framework-only reassignment. Do not alter anything below.
 
-$global-spacing-unit-tiny:  round($global-spacing-unit * $global-spacing-unit-factor-tiny);
-$global-spacing-unit-small: round($global-spacing-unit * $global-spacing-unit-factor-small);
+$global-spacing-unit-small:  round($global-spacing-unit * $global-spacing-unit-factor-small);
+$global-spacing-unit-medium: round($global-spacing-unit * $global-spacing-unit-factor-medium);
 $global-spacing-unit-large: round($global-spacing-unit * $global-spacing-unit-factor-large);
-$global-spacing-unit-huge:  round($global-spacing-unit * $global-spacing-unit-factor-huge);
+$global-spacing-unit-xlarge:  round($global-spacing-unit * $global-spacing-unit-factor-xlarge);

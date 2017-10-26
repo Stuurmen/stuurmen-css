@@ -64,6 +64,18 @@
 }
 
 //
+// Injects generic rules for disabling <button> styles.
+@mixin u-button-clean {
+  background: none;
+  outline: none;
+  text-decoration: none;
+  text-shadow: none;
+  border: none;
+  text-align: left;
+  padding: 0;
+}
+
+//
 // Generate a font-size and baseline-compatible line-height.
 //
 // @link   https://github.com/inuitcss/inuitcss/c14029c/tools/_tools.font-size.scss
@@ -85,6 +97,27 @@
     }
     @elseif ($line-height != "none" and $line-height != false) {
       @error "D’oh! `#{$line-height}` is not a valid value for `$line-height`."
+    }
+  }
+}
+
+//
+// Responsive font-sizes
+//
+@mixin responsive-font-size($fs-map, $fs-breakpoints: $mq-breakpoints) {
+  @each $fs-breakpoint, $fs-font-size in $fs-map {
+    @if $fs-breakpoint == null {
+      @include font-size($fs-font-size);
+    }
+    @else {
+      // If $fs-font-size is a key that exists in
+      // $fs-breakpoints, use the value
+      @if map-has-key($fs-breakpoints, $fs-breakpoint) {
+        $fs-breakpoint: map-get($fs-breakpoints, $fs-breakpoint);
+      }
+      @media screen and (min-width: $fs-breakpoint) {
+        @include font-size($fs-font-size);
+      }
     }
   }
 }

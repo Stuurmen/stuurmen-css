@@ -16,8 +16,8 @@
 html {
   overflow-y: scroll; /* [2] */
   min-height: 100%; /* [3] */
-  color: $color;
-  font-size: em($font-size, 16px); /* [1] */
+  color: $font-color;
+  font-size: rem($font-size, 16px); /* [1] */
   font-family: $font-family;
   line-height: $line-height; /* [1] */
 }

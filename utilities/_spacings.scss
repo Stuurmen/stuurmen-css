@@ -32,10 +32,10 @@ $spacing-properties: (
 
 $spacing-sizes: (
         null: $global-spacing-unit,
-        '-tiny': $global-spacing-unit-tiny,
         '-small': $global-spacing-unit-small,
+        '-medium': $global-spacing-unit-medium,
         '-large': $global-spacing-unit-large,
-        '-huge': $global-spacing-unit-huge,
+        '-xlarge': $global-spacing-unit-xlarge,
         '-none': 0
 ) !default;
 

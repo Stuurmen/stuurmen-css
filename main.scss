@@ -27,11 +27,12 @@
 @import "elements/images";
 @import "elements/links";
 @import "elements/page";
+@import "elements/typography";
 
 // Objects
 // Objects, abstractions, and design patterns (e.g. .o-layout {}). non-cosmetic styles that handle the skeletal aspect of a lot of UI components, without ever actually looking like designed ‘things’.
 // ==========================================================================
-@import "objects/flex";
+@import "objects/grid";
 @import "objects/list";
 @import "objects/media";
 @import "objects/nav";

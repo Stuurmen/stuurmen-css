@@ -41,6 +41,28 @@
   }
 }
 
+//
+// Checks if a list contains a value(s).
+//
+// @link   https://github.com/thoughtbot/bourbon/blob/master/core/bourbon/validators/_contains.scss
+// @param  {List} $list   - The list to check against.
+// @param  {List} $values - A single value or list of values to check for.
+// @return {Boolean}
+// @access private
+//
+@function list-contains(
+  $list,
+  $values...
+) {
+  @each $value in $values {
+    @if type-of(index($list, $value)) != "number" {
+      @return false;
+    }
+  }
+
+  @return true;
+}
+
 ///* ========================================================================
 //   #CLEARFIX
 //   ======================================================================== */
