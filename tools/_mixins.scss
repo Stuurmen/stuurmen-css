@@ -63,8 +63,6 @@
   list-style: none;
 }
 
-//
-// Injects generic rules for disabling <button> styles.
 @mixin u-button-clean {
   background: none;
   outline: none;
@@ -75,29 +73,39 @@
   padding: 0;
 }
 
-//
 // Generate a font-size and baseline-compatible line-height.
-//
-// @link   https://github.com/inuitcss/inuitcss/c14029c/tools/_tools.font-size.scss
-// @param  {Number}  $font-size           - The size of the font.
-// @param  {Number}  $line-height [auto]  - The line box height.
-// @param  {Boolean} $important   [false] - Whether the font-size is important.
-// @output `font-size`, `line-height`
-//
 @mixin font-size($font-size, $line-height: auto, $important: false) {
-  $important: important($important);
-  font-size: rem($font-size) $important;
 
-  @if ($line-height == "auto") {
-    line-height: ceil($font-size / $line-height) * ($line-height / $font-size) $important;
-  }
-  @else {
-    @if (type-of($line-height) == number or $line-height == "inherit" or $line-height == "normal") {
-      line-height: $line-height $important;
+  @if (type-of($font-size) == number) {
+    @if (unit($font-size) != "px") {
+      @error "`#{$font-size}` needs to be a pixel value.";
     }
-    @elseif ($line-height != "none" and $line-height != false) {
+  } @else {
+    @error "`#{$font-size}` needs to be a number.";
+  }
+
+  @if ($important == true) {
+    $important: !important;
+  } @else if ($important == false) {
+    $important: null;
+  } @else {
+    @error "`#{$important}` needs to be `true` or `false`."
+  }
+
+  // We provide a `px` fallback for old IEs not supporting `rem` values.
+  font-size: $font-size $important;
+  font-size: ($font-size / $global-font-size) * 1rem $important;
+
+  @if ($line-height == 'auto') {
+    line-height: ceil($font-size / $global-line-height) * ($global-line-height / $font-size) $important;
+  } @else {
+
+    @if (type-of($line-height) == number or $line-height == 'inherit' or $line-height == 'normal') {
+      line-height: $line-height $important;
+    } @else if ($line-height != 'none' and $line-height != false) {
       @error "D’oh! `#{$line-height}` is not a valid value for `$line-height`."
     }
+
   }
 }
 

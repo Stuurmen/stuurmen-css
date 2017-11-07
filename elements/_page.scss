@@ -17,9 +17,9 @@ html {
   overflow-y: scroll; /* [2] */
   min-height: 100%; /* [3] */
   color: $font-color;
-  font-size: rem($font-size, 16px); /* [1] */
+  font-size: rem($global-font-size, 16px); /* [1] */
   font-family: $font-family;
-  line-height: $line-height; /* [1] */
+  line-height: $global-line-height; /* [1] */
 }
 
 ::selection {

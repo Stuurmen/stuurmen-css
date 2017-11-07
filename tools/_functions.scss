@@ -5,7 +5,7 @@
 // @param  {Number} $base [$font-size] - The assumed base font size.
 // @return {Number} Scalable pixel value in REMs.
 //
-@function rem($size, $base: $font-size) {
+@function rem($size, $base: $global-font-size) {
   @if (type-of($size) == number) {
     @if (unit($size) != "px") {
       @error "`#{$size}` needs to be a pixel value.";
