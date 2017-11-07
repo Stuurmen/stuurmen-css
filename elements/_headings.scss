@@ -4,7 +4,7 @@
 
 @mixin h {
   margin-top: 0;
-  line-height: $line-height;
+  line-height: $global-line-height;
 }
 
 //
