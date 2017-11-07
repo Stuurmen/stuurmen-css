@@ -21,7 +21,7 @@
     "node-sass": "^4.5.2"
   },
   "dependencies": {
-    "normalize-scss": "^3.0.3",
+    "normalize.css": "^7.0.0",
     "sass-mq": "^3.3.2"
   }
 }
