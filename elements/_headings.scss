@@ -5,6 +5,7 @@
 @mixin h {
   margin-top: 0;
   line-height: $global-line-height;
+  font-family: $font-headings;
 }
 
 //
@@ -30,35 +31,35 @@
 h1, .o-h1 {
   @extend .o-h;
 
-  font-size: rem($font-size-h1);
+  @include responsive-font-size($h1-font-sizes);
 }
 
 h2, .o-h2 {
   @extend .o-h;
 
-  font-size: rem($font-size-h2);
+  @include responsive-font-size($h2-font-sizes);
 }
 
 h3, .o-h3 {
   @extend .o-h;
 
-  font-size: rem($font-size-h3);
+  @include responsive-font-size($h3-font-sizes);
 }
 
 h4, .o-h4 {
   @extend .o-h;
 
-  font-size: rem($font-size-h4);
+  @include responsive-font-size($h4-font-sizes);
 }
 
 h5, .o-h5 {
   @extend .o-h;
 
-  font-size: rem($font-size-h5);
+  @include responsive-font-size($h6-font-sizes);
 }
 
 h6, .o-h6 {
   @extend .o-h;
 
-  font-size: rem($font-size-h6);
+  @include responsive-font-size($h6-font-sizes);
 }
