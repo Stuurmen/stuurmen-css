@@ -24,6 +24,20 @@
   }
 }
 
+@mixin u-hide-from($from) {
+  display: block;
+  @include mq($from) {
+    display: none;
+  }
+}
+
+@mixin u-show-from($from) {
+  display: none;
+  @include mq($from) {
+    display: block;
+  }
+}
+
 //
 // Generate `:hover` and `:focus` styles in one go.
 //
