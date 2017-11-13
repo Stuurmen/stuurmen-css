@@ -76,6 +76,7 @@ $fractions: 12 !default;
 $offsets: true !default;
 $widths-delimiter: \/ !default;
 $widths-breakpoint-separator: \@ !default;
+$flex-source-ordering-count: 3;
 
 // Name your breakpoints in a way that creates a ubiquitous language
 // across team members. It will improve communication between
