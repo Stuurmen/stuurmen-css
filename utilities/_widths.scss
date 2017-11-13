@@ -35,6 +35,11 @@
       }
     }
   }
+  @for $i from 1 through $flex-source-ordering-count {
+    .u-order-#{$i} {
+      @include flex-order($i);
+    }
+  }
 }
 
 @include flexwidths($fractions);
