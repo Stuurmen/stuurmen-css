@@ -24,6 +24,10 @@
         max-width: ($numerator / $denominator) * 100% !important;
       }
 
+      .u-order-#{$numerator}#{$breakpoint} {
+        @include flex-order($numerator);
+      }
+
       @if ($offsets == true) {
         .o-layout:not(.o-layout--reversed) .o-layout__item.u-offset-#{$numerator}#{$breakpoint} {
           margin-left: ($numerator / $denominator) * 100% !important;
@@ -33,11 +37,6 @@
           margin-right: ($numerator / $denominator) * 100% !important;
         }
       }
-    }
-  }
-  @for $i from 1 through $flex-source-ordering-count {
-    .u-order-#{$i} {
-      @include flex-order($i);
     }
   }
 }
