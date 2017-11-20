@@ -78,7 +78,7 @@
   @each $bp-name, $bp-value in $mq-breakpoints {
     @include mq($from: $bp-name) {
       @include flexwidths($fractions, #{$widths-breakpoint-separator}#{$bp-name});
-      @include flex-order(#{$widths-breakpoint-separator}#{$bp-name});
+      @include flex-order($flex-source-ordering-count, #{$widths-breakpoint-separator}#{$bp-name});
     }
   }
 }
