@@ -162,12 +162,19 @@ $flex-spacings: (
 //  Mixin to set offset in SCSS
 //  e.g.
 // ==========================================================================||
-
-@mixin flex-offset($offset, $vw: false, $left: true) {
+@mixin flex-offset($offset, $vw: false, $left: true, $both: false, $nomargin: false) {
   @if ($offsets == true) {
-    $position: if($left, 'left', 'right');
-    $type: if($vw, 'vw', '%');
+    $margin: if($nomargin, 'left', 'margin-');
+    @if ($both == true) {
+      $type: if($vw, 'vw', '%');
 
-    margin-#{$position}: ($offset / 12) * 100#{$type};
+      #{$margin}left: ($offset / 12) * 100#{$type};
+      #{$margin}right: ($offset / 12) * 100#{$type};
+    } @else {
+      $position: if($left, 'left', 'right');
+      $type: if($vw, 'vw', '%');
+
+      #{$margin}#{$position}: ($offset / 12) * 100#{$type};
+    }
   }
 }
