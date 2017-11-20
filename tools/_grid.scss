@@ -163,12 +163,11 @@ $flex-spacings: (
 //  e.g.
 // ==========================================================================||
 
-@mixin flex-offset($offset, $vw: false) {
+@mixin flex-offset($offset, $vw: false, $left: true) {
   @if ($offsets == true) {
-    @if ($vw == true) {
-      margin-left: (12 / $offset) * 100vw;
-    } @else {
-      margin-left: (12 / $offset) * 100%;
-    }
+    $position: if($left, 'left', 'right');
+    $type: if($vw, 'vw', '%');
+
+    margin-#{$position}: (12 / $offset) * 100#{$type};
   }
 }
