@@ -164,7 +164,7 @@ $flex-spacings: (
 // ==========================================================================||
 @mixin flex-offset($offset, $vw: false, $left: true, $both: false, $nomargin: false) {
   @if ($offsets == true) {
-    $margin: if($nomargin, 'left', 'margin-');
+    $margin: if($nomargin, '', 'margin-');
     @if ($both == true) {
       $type: if($vw, 'vw', '%');
 
