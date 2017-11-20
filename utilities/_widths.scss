@@ -47,9 +47,9 @@
 //  <div class="u-order-2"></div>
 // ==========================================================================||
 
-@mixin flexorder($flex-source-ordering-count) {
+@mixin flex-order($flex-source-ordering-count, $breakpoint: null) {
   @for $i from 1 through $flex-source-ordering-count {
-    .u-order-#{$i} {
+    .u-order-#{$i}#{$breakpoint} {
       @include flex-order($i);
     }
   }
@@ -57,11 +57,11 @@
 
 /// Changes the source order of a flex child. Children with lower numbers appear first in the layout.
 /// @param {Number} $order [0] - Order number to apply.
-@mixin flex-order($order: 0) {
+@mixin flexorder($order: 0) {
   order: $order;
 }
 
-@include flexorder($flex-source-ordering-count);
+@include flex-order($flex-source-ordering-count);
 
 // ==========================================================================||
 //  Similar to inuitcss utilities.widths, $mq-breakpoints defined allows
@@ -78,6 +78,7 @@
   @each $bp-name, $bp-value in $mq-breakpoints {
     @include mq($from: $bp-name) {
       @include flexwidths($fractions, #{$widths-breakpoint-separator}#{$bp-name});
+      @include flex-order(#{$widths-breakpoint-separator}#{$bp-name});
     }
   }
 }
