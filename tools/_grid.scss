@@ -168,6 +168,6 @@ $flex-spacings: (
     $position: if($left, 'left', 'right');
     $type: if($vw, 'vw', '%');
 
-    margin-#{$position}: (12 / $offset) * 100#{$type};
+    margin-#{$position}: ($offset / 12) * 100#{$type};
   }
 }
