@@ -12,8 +12,8 @@
 //  by o-flex's direction and if $offsets is set to true
 //
 //  e.g.
-//  <div class="u-1/2"></div>
-//  <div class="u-1/2 u-offset-1/2"></div>
+//  <div class="u-1"></div>
+//  <div class="u-2 u-offset-1"></div>
 // ==========================================================================||
 
 @mixin flexwidths($fractions, $breakpoint:null) {
@@ -39,6 +39,7 @@
 
 @include flexwidths($fractions);
 
+
 // ==========================================================================||
 //  Mixin to generator order clases
 //  e.g.
@@ -53,6 +54,14 @@
     }
   }
 }
+
+/// Changes the source order of a flex child. Children with lower numbers appear first in the layout.
+/// @param {Number} $order [0] - Order number to apply.
+@mixin flex-order($order: 0) {
+  order: $order;
+}
+
+@include flexorder($flex-source-ordering-count);
 
 // ==========================================================================||
 //  Similar to inuitcss utilities.widths, $mq-breakpoints defined allows

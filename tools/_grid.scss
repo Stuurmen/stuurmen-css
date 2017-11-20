@@ -25,8 +25,7 @@ $flex-directions: (
 @mixin flex-direction($direction: "row") {
   @if map_get($flex-directions, $direction) {
     flex-direction: $direction;
-  }
-  @else {
+  } @else {
     @error "Invalid value entered for flex-direction mixin";
   }
 }
@@ -69,55 +68,44 @@ $flex-positions: (
     @if $position == "centered" {
       align-items: center;
       justify-content: center;
-    }
-    @else if $position == "centered-v" {
+    } @else if $position == "centered-v" {
       align-items: center;
-    }
-    @else if $position == "centered-h" {
+    } @else if $position == "centered-h" {
       justify-content: center;
-    }
-    @else if $position == "lock-left" {
+    } @else if $position == "lock-left" {
       align-content: center;
       align-items: center;
       justify-content: flex-start;
-    }
-    @else if $position == "lock-right" {
+    } @else if $position == "lock-right" {
       align-content: center;
       align-items: center;
       justify-content: flex-end;
-    }
-    @else if $position == "lock-top" {
+    } @else if $position == "lock-top" {
       align-content: flex-start;
       align-items: flex-start;
       justify-content: center;
-    }
-    @else if $position == "lock-bottom" {
+    } @else if $position == "lock-bottom" {
       align-content: flex-end;
       align-items: flex-end;
       justify-content: center;
-    }
-    @else if $position == "lock-top-left" {
+    } @else if $position == "lock-top-left" {
       align-content: flex-start;
       align-items: flex-start;
       justify-content: flex-start;
-    }
-    @else if $position == "lock-top-right" {
+    } @else if $position == "lock-top-right" {
       align-content: flex-start;
       align-items: flex-start;
       justify-content: flex-end;
-    }
-    @else if $position == "lock-bottom-left" {
+    } @else if $position == "lock-bottom-left" {
       align-content: flex-end;
       align-items: flex-end;
       justify-content: flex-start;
-    }
-    @else if $position == "lock-bottom-right" {
+    } @else if $position == "lock-bottom-right" {
       align-content: flex-end;
       align-items: flex-end;
       justify-content: flex-end;
     }
-  }
-  @else {
+  } @else {
     @error "Invalid value entered for flex-position mixin";
   }
 }
@@ -142,8 +130,7 @@ $flex-wraps: (
 @mixin flex-wrap($wrap: "wrap") {
   @if map_get($flex-wraps, $wrap) {
     flex-wrap: $wrap;
-  }
-  @else {
+  } @else {
     @error "Invalid value entered for flex-wrap mixin";
   }
 }
@@ -166,14 +153,18 @@ $flex-spacings: (
 @mixin flex-spacing($spacing: "") {
   @if map_get($flex-spacings, $spacing) {
     justify-content: $spacing;
-  }
-  @else {
+  } @else {
     @error "Invalid value entered for flex-spacing mixin";
   }
 }
 
-/// Changes the source order of a flex child. Children with lower numbers appear first in the layout.
-/// @param {Number} $order [0] - Order number to apply.
-@mixin flex-order($order: 0) {
-  order: $order;
+// ==========================================================================||
+//  Mixin to set offset in SCSS
+//  e.g.
+// ==========================================================================||
+
+@mixin flex-offset($offset) {
+  @if ($offsets == true) {
+    margin-left: (12 / $offset) * 100% !important;
+  }
 }
