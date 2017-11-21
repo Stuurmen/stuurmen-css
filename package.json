@@ -1,10 +1,10 @@
 {
-  "name": "stuurmen-frontend-boilerplate",
+  "name": "stuurmen-css",
   "version": "1.0.0",
-  "description": "Front-end functions",
+  "description": "Stuurmen Front-end boilerplate",
   "main": "main.scss",
   "repository": {
-    "url": "https://github.com/deJong/stuurmen-frontend-boilerplate",
+    "url": "https://github.com/deJong/stuurmen-css",
     "type": "git"
   },
   "scripts": {

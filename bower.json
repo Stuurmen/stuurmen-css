@@ -1,8 +1,8 @@
 {
-  "name": "stuurmen-frontend-boilerplate",
+  "name": "stuurmen-css",
   "version": "0.1",
   "homepage": "https://stuur.men",
-  "description": "Front-end functions",
+  "description": "Stuurmen Front-end boilerplate",
   "main": "main.scss",
   "authors": [
     "Stijn de Jong"
