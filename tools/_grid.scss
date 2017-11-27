@@ -157,24 +157,3 @@ $flex-spacings: (
     @error "Invalid value entered for flex-spacing mixin";
   }
 }
-
-// ==========================================================================||
-//  Mixin to set offset in SCSS
-//  e.g.
-// ==========================================================================||
-@mixin flex-offset($offset, $vw: false, $left: true, $both: false, $nomargin: false) {
-  @if ($offsets == true) {
-    $margin: if($nomargin, '', 'margin-');
-    @if ($both == true) {
-      $type: if($vw, 'vw', '%');
-
-      #{$margin}left: ($offset / 12) * 100#{$type};
-      #{$margin}right: ($offset / 12) * 100#{$type};
-    } @else {
-      $position: if($left, 'left', 'right');
-      $type: if($vw, 'vw', '%');
-
-      #{$margin}#{$position}: ($offset / 12) * 100#{$type};
-    }
-  }
-}
