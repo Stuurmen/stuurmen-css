@@ -14,7 +14,7 @@
 // 3. Ensure the page always fills at least the entire height of the viewport.
 //
 html {
-  overflow-y: scroll; /* [2] */
+  //overflow-y: scroll; /* [2] */
   min-height: 100%; /* [3] */
   color: $font-color;
   font-size: rem($global-font-size, 16px); /* [1] */
