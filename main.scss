@@ -2,69 +2,107 @@
 // Main
 // ==========================================================================
 
-//@import 'bower_components/normalize-scss/normalize.css';
 //@import "bower_components/sass-mq/mq.scss";
 
-// Settings
+/* Settings
+**
+** This holds any global settings for your project. This layer should only house settings that need to be accessed from anywhere.
+** This ensures this layer stays nice and slim, and means that most settings can be found alongside the code that uses them, making finding things far simpler.
+**
+** Examples of global settings might be things like the base font size, colour palettes, config and so on.
+*/
 // ==========================================================================
-//@import "settings/example.colors";
-//@import "settings/example.config";
+//@import "settings/example.settings.colors";
+//@import "settings/example.settings.config";
+//@import "settings/example.settings.fonts";
 
-// Tools
+/* Tools
+**
+** The next layer houses your globally available tooling – namely mixins and functions. Any mixin or function that does not need accessing globally should belong in the partial to which it relates.
+** The Tools layer comes after the Settings layer because a mixin may require one of the global settings as a default parameter. Examples of global tools might be gradient mixins, font-sizing mixins and so on.
+**
+*/
 // ==========================================================================
-@import "tools/fonts";
-@import "tools/functions";
-@import "tools/hidden";
-@import "tools/grid";
-@import "tools/mixins";
+@import "tools/tools.fonts";
+@import "tools/tools.functions";
+@import "tools/tools.grid";
+@import "tools/tools.hidden";
+@import "tools/tools.mixins";
 
-// Generic
+/* Generic
+**
+** The Generic layer is the first one that actually produces any CSS. It houses very high-level, far reaching styles. This layer is seldom modified, and is usually the same across any projects you work on.
+** It contains things like Normalize.css, global box-sizing rules, CSS resets and so on. The Generic layer affects a lot of the DOM, hence it being nice and wide in the Triangle model, and occurring very early on.
+**
+*/
 // ==========================================================================
-@import "generic/reset";
+@import "generic/generic.normalize";
+@import "generic/generic.reset";
 
-// Elements
-// Unclassed HTML elements (e.g. a {}, blockquote {}, address {}).
+/* Elements
+**
+** These are bare, unclassed HTML elements. What does an h1 look like without a class on it? What does an a look like without a class on it? The Elements layer binds onto bare HTML element (or 'type') selectors only.
+**
+*/
 // ==========================================================================
-@import "elements/form";
-@import "elements/headings";
-@import "elements/images";
-@import "elements/links";
-@import "elements/page";
-@import "elements/typography";
+@import "elements/elements.form";
+@import "elements/elements.headings";
+@import "elements/elements.images";
+@import "elements/elements.links";
+@import "elements/elements.page";
+@import "elements/elements.typography";
 
-// Objects
-// Objects, abstractions, and design patterns (e.g. .o-layout {}). non-cosmetic styles that handle the skeletal aspect of a lot of UI components, without ever actually looking like designed ‘things’.
+/* Objects
+**
+** This is the first layer in which we find class-based selectors. These are concerned with styling non-cosmetic design patterns, or 'objects'.
+** Objects can range from something as simple as a .wrapper element, to layout systems, through to things like the OOCSS poster child – the Media Object. This layer affects less of the DOM than the last layer,
+** has a higher specificity, and is slightly more explicit in that we are now targeting sections of the DOM with classes.
+**
+** E.g. Objects, abstractions, and design patterns (e.g. .o-layout {}). non-cosmetic styles that handle the skeletal aspect of a lot of UI components, without ever actually looking like designed ‘things’.
+**
+*/
 // ==========================================================================
-@import "objects/grid";
-@import "objects/list";
-@import "objects/media";
-@import "objects/nav";
-@import "objects/ratio";
-@import "objects/tables";
+@import "objects/objects.grid";
+@import "objects/objects.list";
+@import "objects/objects.ratio";
+@import "objects/objects.table";
+@import "objects/objects.wrapper";
 
-// Components
-// Discrete, complete chunks of UI (e.g. .c-carousel {}). This is the one layer that inuitcss doesn’t provide code for, as this is completely your terrain.
+/* Components
+**
+** The Components layer is where we begin to style recognisable pieces of UI. We're still binding onto classes here, so our specificity hasn't yet increased.
+** However, this layer is more explicit than the last one in that we are now styling explicit, designed pieces of the DOM.
+** We shouldn't find any selectors with a lower specificity than one class in this layer. This is where the majority of your work will happen after initial project set-up.
+**
+** E.g. Discrete, complete chunks of UI (e.g. .c-carousel {}).
+*/
 // ==========================================================================
-//@import "components/button";
+//@import "components/components.button";
 
-// Templates
+/* Utilities
+**
+** A layer of high-specificity selectors. It overrides all classes for specific use cases.
+**
+** E.g. .u-hidden {}.
+*/
 // ==========================================================================
-//@import "templates/base";
-//@import "templates/page";
-//@import "templates/post";
-//@import "templates/preloader";
-//@import "templates/search";
+@import "utilities/utilities.editor-style";
+@import "utilities/utilities.float";
+@import "utilities/utilities.headings";
+@import "utilities/utilities.hidden";
+@import "utilities/utilities.print";
+@import "utilities/utilities.widths";
 
-// Utilities
+/* Templates
+**
+** This layer beats all other layers, and has the power to override anything at all that has gone before it.
+** The files are grouped by template 'page'.
+**
+*/
 // ==========================================================================
-//@import "utilities/editor-style";
-@import "utilities/float";
-@import "utilities/headings";
-@import "utilities/hidden";
-@import "utilities/print";
-@import "utilities/spacings";
-@import "utilities/widths";
-
-// Vendor
-// ==========================================================================
-
+//@import "templates/templates.base";
+//@import "templates/templates.page";
+//@import "templates/templates.single";
+//@import "templates/templates.preloader";
+//@import "templates/templates.home";
+//@import "templates/templates.search";

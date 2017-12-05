@@ -1,0 +1,12 @@
+// ==========================================================================
+// Elements / Links
+// ==========================================================================
+
+a {
+  text-decoration: none;
+  color: $link-color;
+  transition: 0.5s color $global-transition;
+  @include u-hocus {
+    color: $link-hover-color
+  }
+}

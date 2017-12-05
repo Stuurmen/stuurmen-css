@@ -1,5 +1,5 @@
 // ==========================================================================
-// Base / Page
+// Elements / Page
 // ==========================================================================
 
 //
@@ -26,12 +26,4 @@ html {
   background-color: $selection-background-color;
   color: $selection-text-color;
   text-shadow: none;
-}
-
-a {
-  @include u-hocus {
-    color: $link-hover-color;
-  }
-
-  color: $link-color;
 }

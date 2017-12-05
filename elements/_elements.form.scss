@@ -1,0 +1,41 @@
+// ==========================================================================
+// Elements / Forms
+// ==========================================================================
+
+form,
+input {
+  font-family: $font-family;
+}
+
+input,
+select,
+textarea {
+  display: block;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  outline: 0;
+  border: 0;
+  border-radius: 0;
+  background: none transparent;
+  color: inherit;
+  font: inherit;
+  line-height: normal;
+  appearance: none;
+}
+
+select {
+  text-transform: none;
+  &::-ms-expand {
+    display: none;
+  }
+  &::-ms-value {
+    background: none;
+    color: inherit;
+  }
+}
+
+textarea {
+  overflow: auto;
+  resize: vertical;
+}

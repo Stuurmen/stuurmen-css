@@ -1,15 +1,11 @@
-// ==========================================================================||
-//  Overwrites inuitcss/utilities/widths as it will be used alongside o-flex
-//  instead of o-layout
-//
-//  Note: Should not be used alongside inuitcss's utilities.width
-//  Reference: https://github.com/inuitcss/inuitcss/blob/develop/utilities/_utilities.widths.scss
-// ==========================================================================||
+// ==========================================================================
+// Utilities / Widths
+// Note: uses flexbox
+// ==========================================================================
 
 // ==========================================================================||
-//  Mixin to spit out width classes similar to inuitcss except that
-//  u-push/u-pull is replaced with u-offset which its direction is influenced
-//  by o-flex's direction and if $offsets is set to true
+//  Mixin to spit out width classes and u-offset which its direction is influenced
+//  by o-layouts's direction and if $offsets is set to true
 //
 //  e.g.
 //  <div class="u-1"></div>
@@ -39,7 +35,6 @@
 
 @include flexwidths($fractions);
 
-
 // ==========================================================================||
 //  Mixin to generator order clases
 //  e.g.
@@ -64,14 +59,11 @@
 @include flex-order($flex-source-ordering-count);
 
 // ==========================================================================||
-//  Similar to inuitcss utilities.widths, $mq-breakpoints defined allows
-//  you to do something like this for additional control via markup only
+//  $mq-breakpoints defined building flex widths & order classes
 //
 //  e.g.
-//  <div class="o-layout__item u-1/2@mobile"></div>
-//  <div class="o-layout__item u-1/3@tablet u-offset-1/3@tablet"></div>
-//  <div class="o-layout__item u-1/4@desktop"></div>
-//  <div class="o-layout__item u-1/5@wide u-offset-2/5@wide"></div>
+//  <div class="o-layout__item u-1@small"></div>
+//  <div class="o-layout__item u-3@large u-offset-1@large"></div>
 // ==========================================================================||
 
 @if (variable-exists(mq-breakpoints)) {

@@ -1,8 +1,8 @@
 {
   "name": "stuurmen-css",
-  "version": "0.1",
+  "version": "0.2.0",
   "homepage": "https://stuur.men",
-  "description": "Stuurmen Front-end boilerplate",
+  "description": "Stuurmen CSS Front-end framework",
   "main": "main.scss",
   "authors": [
     "Stijn de Jong"
@@ -17,7 +17,6 @@
     "tests"
   ],
   "dependencies": {
-    "normalize-scss": "^3.0.3",
     "sass-mq": "^3.3.2"
   }
 }

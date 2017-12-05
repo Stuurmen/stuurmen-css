@@ -1,4 +1,7 @@
-//
+// ==========================================================================
+// Tools / Mixins
+// ==========================================================================
+
 // Vertically-center the direct descendants of the current element.
 //
 // Centering is achieved by displaying children as inline-blocks. Any whitespace
@@ -106,6 +109,8 @@
   list-style: none;
 }
 
+//
+// Injects generic rules for disabling default button styles.
 @mixin u-button-clean {
   background: none;
   outline: none;
@@ -114,6 +119,22 @@
   border: none;
   text-align: left;
   padding: 0;
+}
+
+// Mixin to drop micro clearfix into a selector. Further reading:
+// http://www.cssmojo.com/the-very-latest-clearfix-reloaded/
+//
+// .usage {
+//   @include inuit-clearfix();
+// }
+@mixin clearfix() {
+
+  &:after {
+    content: "" !important;
+    display: block !important;
+    clear: both !important;
+  }
+
 }
 
 // Generate a font-size and baseline-compatible line-height.

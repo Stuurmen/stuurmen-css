@@ -1,7 +1,0 @@
-a {
-  text-decoration: none;
-  color: $font-color;
-  @include u-hocus {
-    color: darken($font-color, 10%);
-  }
-}

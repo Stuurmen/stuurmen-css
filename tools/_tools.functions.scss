@@ -1,3 +1,7 @@
+// ==========================================================================
+// Tools / functions
+// ==========================================================================
+
 //
 // Converts the given pixel value to its REM quivalent.
 //
@@ -61,24 +65,4 @@
   }
 
   @return true;
-}
-
-///* ========================================================================
-//   #CLEARFIX
-//   ======================================================================== */
-
-// Mixin to drop micro clearfix into a selector. Further reading:
-// http://www.cssmojo.com/the-very-latest-clearfix-reloaded/
-//
-// .usage {
-//   @include inuit-clearfix();
-// }
-@mixin clearfix() {
-
-  &:after {
-    content: "" !important;
-    display: block !important;
-    clear: both !important;
-  }
-
 }

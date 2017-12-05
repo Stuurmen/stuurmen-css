@@ -1,0 +1,10 @@
+// ==========================================================================
+// Settings / Config / Fonts
+// ==========================================================================
+
+@include font-face(
+            "Larsseit", "fonts/Larsseit", ("ttf", "woff2", "woff")
+) {
+  font-style: normal;
+  font-weight: normal;
+}

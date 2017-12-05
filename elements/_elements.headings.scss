@@ -1,5 +1,5 @@
 // ==========================================================================
-// Base / Headings
+// Elements / Headings
 // ==========================================================================
 
 @mixin h {
@@ -15,51 +15,39 @@
 //   <p class="u-h"></p>
 //
 //
-.o-h {
+.u-h {
   @include h;
 }
 
 //
-// Styles for headings 1 through 6 with classes to provide
-// a double stranded heading hierarchy, e.g. we semantically
-// need an H2, but we want it to be sized like an H1:
+// Styles for headings 1 through 6
 //
-// @example
-//   <h2 class="o-h1"></h2>
-//
-//
-h1, .o-h1 {
-  @extend .o-h;
-
+h1 {
+  @extend .u-h;
   @include responsive-font-size($h1-font-sizes);
 }
 
-h2, .o-h2 {
-  @extend .o-h;
-
+h2 {
+  @extend .u-h;
   @include responsive-font-size($h2-font-sizes);
 }
 
-h3, .o-h3 {
-  @extend .o-h;
-
+h3 {
+  @extend .u-h;
   @include responsive-font-size($h3-font-sizes);
 }
 
-h4, .o-h4 {
-  @extend .o-h;
-
+h4 {
+  @extend .u-h;
   @include responsive-font-size($h4-font-sizes);
 }
 
-h5, .o-h5 {
-  @extend .o-h;
-
+h5 {
+  @extend .u-h;
   @include responsive-font-size($h6-font-sizes);
 }
 
-h6, .o-h6 {
-  @extend .o-h;
-
+h6 {
+  @extend .u-h;
   @include responsive-font-size($h6-font-sizes);
 }

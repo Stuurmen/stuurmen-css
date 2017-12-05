@@ -1,0 +1,36 @@
+// ==========================================================================
+// Utilities / Headings
+// ==========================================================================
+
+/**
+ * Redefine all of our basic heading styles against utility classes so as to
+ * allow for double stranded heading hierarchy, e.g. we semantically need an H2,
+ * but we want it to be sized like an H1:
+ *
+ *   <h2 class="u-h1"></h2>
+ *
+ */
+
+.u-h1 {
+  @include responsive-font-size($h1-font-sizes);
+}
+
+.u-h2 {
+  @include responsive-font-size($h2-font-sizes);
+}
+
+.u-h3 {
+  @include responsive-font-size($h3-font-sizes);
+}
+
+.u-h4 {
+  @include responsive-font-size($h4-font-sizes);
+}
+
+.u-h5 {
+  @include responsive-font-size($h5-font-sizes);
+}
+
+.u-h6 {
+  @include responsive-font-size($h6-font-sizes);
+}

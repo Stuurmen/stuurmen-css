@@ -1,7 +1,7 @@
 {
   "name": "stuurmen-css",
-  "version": "1.0.0",
-  "description": "Stuurmen Front-end boilerplate",
+  "version": "0.2.0",
+  "description": "Stuurmen CSS Front-end framework",
   "main": "main.scss",
   "repository": {
     "url": "https://github.com/deJong/stuurmen-css",
@@ -21,7 +21,6 @@
     "node-sass": "^4.5.2"
   },
   "dependencies": {
-    "normalize.css": "^7.0.0",
     "sass-mq": "^3.3.2"
   }
 }
