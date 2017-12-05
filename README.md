@@ -1,7 +1,7 @@
 Stuurmen CSS
 ==================================
 
-Front-end boilerplate for projects by [Stuurmen][stuur.men].
+Front-end boilerplate for projects by [Stuurmen][https://stuur.men].
 
 ## Requirements
 
@@ -18,8 +18,10 @@ Front-end boilerplate for projects by [Stuurmen][stuur.men].
 
 2a.  **Test linting and building**
     -   `npm run test`
+
 2b.  **Lint SCSS**
     -   `npm run lint`
+
 2c.  **Build main.css**
     -   `npm run scss**
 
@@ -41,7 +43,7 @@ Front-end boilerplate for projects by [Stuurmen][stuur.men].
 *   **Components:** Discrete, complete chunks of UI (e.g. `.c-carousel {}`).
 *   **Utilities:** High-specificity, very explicit selectors. Overrides and helper
   classes (e.g. `.u-hidden {}`).
-*   **Templates Custom templating
+*   **Templates** Custom templating
 
 ### Grid
 
@@ -59,6 +61,10 @@ Insert a `o-layout` block and add `o-layout__item` elements inside it. Build col
 
 We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/deJong/stuurmen-css).
 
+##Contributing
+
+Pull requests and stars are always welcome. For bugs and feature requests, [please create an issue](https://github.com/deJong/stuurmen-css/issues)
+
 ## Authors
 
-* **Stijn de Jong** - *Initial work* - [Stuurmen](https://github.com/deJong)
+* **Stijn de Jong** - *Building framework* - [Stuurmen](https://github.com/deJong)
