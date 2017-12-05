@@ -1,7 +1,7 @@
 Stuurmen CSS
 ==================================
 
-Front-end boilerplate for projects by [Stuurmen][https://stuur.men].
+Front-end boilerplate for projects by [Stuurmen](https://stuur.men)..
 
 ## Requirements
 
@@ -61,10 +61,10 @@ Insert a `o-layout` block and add `o-layout__item` elements inside it. Build col
 
 We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/deJong/stuurmen-css).
 
-##Contributing
+## Contributing
 
 Pull requests and stars are always welcome. For bugs and feature requests, [please create an issue](https://github.com/deJong/stuurmen-css/issues)
 
 ## Authors
-
+* **InuitCSS** - *Base of the framework* - [inuitcss](https://github.com/inuitcss/inuitcss)
 * **Stijn de Jong** - *Building framework* - [Stuurmen](https://github.com/deJong)
