@@ -14,11 +14,6 @@
 .o-layout--auto,
 .o-layout--grids {
   flex-wrap: wrap;
-  margin-left: -$global-spacing-unit;
-
-  > .o-layout__item {
-    padding-left: $global-spacing-unit;
-  }
 }
 
 .o-layout--auto {

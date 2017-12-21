@@ -3,22 +3,20 @@
   "version": "0.2.0",
   "description": "Stuurmen CSS Front-end framework",
   "main": "main.scss",
-  "repository": {
-    "url": "https://github.com/deJong/stuurmen-css",
-    "type": "git"
-  },
+  "repository": "https://github.com/stuurmen/stuurmen-css",
   "scripts": {
     "test": "npm run lint && npm run scss",
     "lint": "./node_modules/.bin/stylelint \"**/*.scss\" --syntax scss",
-    "scss": "node-sass main.scss"
+    "scss": "node-sass main.scss",
+    "build-task:scss-compile": "node-sass --source-map false main.scss/ -o dist/css"
   },
   "author": "Stijn de Jong",
   "license": "MIT",
   "devDependencies": {
     "glob": "^7.1.1",
+    "node-sass": "^4.5.2",
     "stylelint": "^7.10.1",
-    "stylelint-scss": "^1.4.3",
-    "node-sass": "^4.5.2"
+    "stylelint-scss": "^1.4.3"
   },
   "dependencies": {
     "sass-mq": "^3.3.2"
