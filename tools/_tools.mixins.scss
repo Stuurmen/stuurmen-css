@@ -141,7 +141,7 @@
 @mixin font-size($font-size, $line-height: auto, $important: false) {
   
   @if (type-of($font-size) == number) {
-    @if (unit($font-size) != "px" or unit($font-size) != 'vw') {
+    @if (unit($font-size) != "px" and unit($font-size) != 'vw') {
       @error "`#{$font-size}` needs to be a pixel or a vw value.";
     }
   } @else {
@@ -160,7 +160,7 @@
   font-size: $font-size $important;
   @if(unit($font-size) == 'px') {
     font-size: ($font-size / $global-font-size) * 1rem $important;
-  @else if(unit($font-size) == 'vw') {
+  } @else if(unit($font-size) == 'vw') {
     font-size: $font-size;
   }
   @if ($line-height == 'auto') {
