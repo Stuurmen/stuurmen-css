@@ -38,7 +38,7 @@
 @function important($flag: false) {
   @if ($flag == true) {
     @return !important;
-  } @elseif ($important == false) {
+  } @else if ($important == false) {
     @return null;
   } @else {
     @error "`#{$flag}` needs to be `true` or `false`."
