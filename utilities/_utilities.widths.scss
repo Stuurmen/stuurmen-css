@@ -12,20 +12,22 @@
 //  <div class="u-2 u-offset-1"></div>
 // ==========================================================================||
 
-@mixin flexwidths($fractions, $breakpoint:null) {
+@mixin flexwidths($fractions, $breakpoint: null) {
   @each $denominator in $fractions {
-    @for $numerator from 1 through $denominator {
+    @for $numerator from 0 through $denominator {
       .u-#{$numerator}#{$breakpoint} {
         flex: 0 0 ($numerator / $denominator) * 100% !important;
         max-width: ($numerator / $denominator) * 100% !important;
       }
 
       @if ($offsets == true) {
-        .o-layout:not(.o-layout--reversed) .o-layout__item.u-offset-#{$numerator}#{$breakpoint} {
+        .o-layout:not(.o-layout--reversed)
+          .o-layout__item.u-offset-#{$numerator}#{$breakpoint} {
           margin-left: ($numerator / $denominator) * 100% !important;
         }
 
-        .o-layout.o-layout--reversed .o-layout__item.u-offset-#{$numerator}#{$breakpoint} {
+        .o-layout.o-layout--reversed
+          .o-layout__item.u-offset-#{$numerator}#{$breakpoint} {
           margin-right: ($numerator / $denominator) * 100% !important;
         }
       }
@@ -43,7 +45,7 @@
 // ==========================================================================||
 
 @mixin flex-order($flex-source-ordering-count, $breakpoint: null) {
-  @for $i from 1 through $flex-source-ordering-count {
+  @for $i from 0 through $flex-source-ordering-count {
     .u-order-#{$i}#{$breakpoint} {
       @include flexorder($i);
     }
@@ -69,8 +71,14 @@
 @if (variable-exists(mq-breakpoints)) {
   @each $bp-name, $bp-value in $mq-breakpoints {
     @include mq($from: $bp-name) {
-      @include flexwidths($fractions, #{$widths-breakpoint-separator}#{$bp-name});
-      @include flex-order($flex-source-ordering-count, #{$widths-breakpoint-separator}#{$bp-name});
+      @include flexwidths(
+        $fractions,
+        #{$widths-breakpoint-separator}#{$bp-name}
+      );
+      @include flex-order(
+        $flex-source-ordering-count,
+        #{$widths-breakpoint-separator}#{$bp-name}
+      );
     }
   }
 }
