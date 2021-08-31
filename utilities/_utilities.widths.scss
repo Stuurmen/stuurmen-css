@@ -45,7 +45,7 @@
 // ==========================================================================||
 
 @mixin flex-order($flex-source-ordering-count, $breakpoint: null) {
-  @for $i from 1 through $flex-source-ordering-count {
+  @for $i from 0 through $flex-source-ordering-count {
     .u-order-#{$i}#{$breakpoint} {
       @include flexorder($i);
     }
