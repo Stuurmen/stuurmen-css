@@ -44,7 +44,7 @@ h4 {
 
 h5 {
   @extend .u-h;
-  @include responsive-font-size($h6-font-sizes);
+  @include responsive-font-size($h5-font-sizes);
 }
 
 h6 {
